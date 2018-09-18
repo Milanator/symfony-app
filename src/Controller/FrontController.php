@@ -16,7 +16,6 @@ class FrontController extends AbstractController {
     public function index() {
         $items = $this->getDoctrine()->getRepository(TodoItem::class)->findAll();
 
-
         return $this->render('front/index.html.twig', [
             'items' => $items
         ]);
