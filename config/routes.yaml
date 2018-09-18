@@ -1,0 +1,30 @@
+login:
+    path: /login
+
+logout:
+    path: /logout
+
+index:
+    path: /
+    controller: App\Controller\AuthController::login
+
+list:
+    path: /list
+    controller: App\Controller\FrontController::index
+
+isDone:
+  path: /item/done
+  controller: App\Controller\FrontController::isDone
+  methods: [POST]
+
+newItem:
+  path: /item/new
+  controller: App\Controller\FrontController::newItem
+
+deleteItem:
+  path: /item/delete
+  controller: App\Controller\FrontController::deleteItem
+
+item:
+    path: /item/{id}
+    controller: App\Controller\FrontController::item

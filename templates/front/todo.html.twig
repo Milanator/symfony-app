@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{%  block body %}
+
+    <table>
+        <tbody>
+            {% for task in tasks %}
+            <tr>
+                <td>{{ task['description'] }}</td>
+                <td>{{ task['date'] }}</td>
+                <td>{{ task['done'] == true ? 1 : 0 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{%  endblock body %}

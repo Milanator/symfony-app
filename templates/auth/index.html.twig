@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+    <a href="{{ path('list') }}">link to List</a>
+
+    <div>
+        <form action="{{ path('login') }}" method="POST">
+            <label>
+                Username: <input type="text" name="_username" id="username">
+            </label>
+            <label>
+                Password: <input type="text" name="_password" id="password">
+            </label>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+{% endblock %}

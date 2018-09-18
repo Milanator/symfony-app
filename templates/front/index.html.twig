@@ -1,0 +1,54 @@
+{% extends "base.html.twig" %}
+
+{% block javascripts %}
+    <script>
+        let isDonePath = "{{ path('isDone') }}";
+        let deleteItemPath = "{{ path('deleteItem') }}";
+    </script>
+{% endblock %}
+
+{% block body %}
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Description</th>
+                <th>datetime</th>
+                <th>is done</th>
+                <th>action</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for item in items %}
+            <tr>
+                <td>
+                    {{ item.id }}
+                </td>
+                <td>
+                    <a href="{{ path('item', {'id': item.id}) }}">{{ item.description }}</a>
+                </td>
+                <td>
+                    {{ item.datetime|date("d.m.Y") }}
+                </td>
+                <td>
+                    {{ item.isdone ? 1 : 0 }}
+                </td>
+                <td>
+                    <button class="deleteButton" data-id="{{ item.id }}">
+                        Delete
+                    </button>
+                    <button class="isDoneButton {{ item.isDone ? 'green' : 'grey' }}" data-id="{{ item.id }}">
+                        Is done
+                    </button>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+    <a href="{{ path('logout') }}">Logout</a>
+
+{% endblock %}

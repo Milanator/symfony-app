@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('./build/main.css') }}">
+        {% block stylesheets %}{% endblock %}
+
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        {% block body %}
+        {% endblock %}
+
+        {% block javascripts %}{% endblock %}
+        <script src="{{ asset('./build/app.js') }}"></script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <p>
+        Description: {{ item.description }}
+    </p>
+    <p>
+        Date time: {{ item.datetime|date("d.m.Y") }}
+    </p>
+    <p>
+        Completed: {{ item.isDone }}
+    </p>
+
+    {{ form_start(itemForm) }}
+    {{ form_widget(itemForm) }}
+    {{ form_end(itemForm) }}
+
+{% endblock %}
